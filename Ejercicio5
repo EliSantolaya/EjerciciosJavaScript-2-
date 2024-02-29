@@ -11,6 +11,7 @@ const arrCities2 = [
   {city: 'Jaén', country: 'Spain', capital: false}
 ]
 
+//1ª forma
 const noCapitalesEsp = [];
 
 for(let i=0; i<arrCities2.length; i++){
@@ -21,3 +22,7 @@ for(let i=0; i<arrCities2.length; i++){
 }
 
 console.log(noCapitalesEsp);
+
+//2ª forma
+const arrCitiesFiltered = arrCities2.filter(city => city.country === 'Sapin' && !city.capital).map(city => ({ city: city.city, isSpain: true}));
+console.log(arrCitiesFiltered);

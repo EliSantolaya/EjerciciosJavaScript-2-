@@ -8,14 +8,6 @@ const arrNames = [
   {id: 5, name: 'Lala'}
 ]
 
-let respuesta;
 
-for(let i=0; i<arrNames.length; i++){
-    if(arrNames[i].id===3){
-        respuesta = arrNames[i];
-        break;
-    }
-}
-
-console.log(respuesta);
-
+const objetoConId3 = arrNames.find(obj => obj.id === 3);
+console.log(objetoConId3);
