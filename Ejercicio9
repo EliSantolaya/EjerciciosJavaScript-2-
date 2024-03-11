@@ -10,10 +10,8 @@ function toLowercaseKeys(obj){
     const result = {};
 
     for(const key in obj){
-        if(obj.hasOwnProperty(key)){
-            const lowercasedKey = key.toLowerCase();
-            result[lowercasedKey] = obj[key];
-        }
+        const lowercasedKey = key.toLowerCase();
+        result[lowercasedKey] = obj[key];
     }
     return result;
 }

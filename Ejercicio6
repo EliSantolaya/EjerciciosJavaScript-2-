@@ -12,7 +12,7 @@ const roundedResult = roundTo(1.123456789, 6);
 console.log(roundedResult); 1.123457*/
 
 
-function rounTo(numer, decimals){
+function roundTo(number, decimals){
     const multipler = 10 ** decimals;
     const roundedValue = Math.round(number * multipler) / multipler;
     return roundedValue;

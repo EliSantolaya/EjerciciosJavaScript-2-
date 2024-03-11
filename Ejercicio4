@@ -7,3 +7,20 @@ const arrNumber3 = [1,4,7,2];
 const interseccion = arrNumber1.filter(num => arrNumber2.includes(num) && arrNumber3.includes(num));
 
 console.log(interseccion);
+
+//2ª forma
+//Primero tengo que convertir los arrays a conjuntos
+const set1 = new Set(arrNumber1);
+const set2 = new Set(arrNumber2);
+const set3 = new Set(arrNumber3);
+
+const intersection = new Set([...set1].filter(num => set2.has(num) && set3.has(num)));
+
+//const intersectionArray = Array.from(interseccion);
+//console.log(intersectionArray);
+
+console.log(interseccion);
+
+/*DOCUMENTACIÓN:
+- Filter y Has: en este ejercicio lo he usado para obtener el elemento que este presente en el set2 y el set3.
+*/

@@ -32,3 +32,29 @@ function fromBytesToFormattedSizeUnits(bytes, precision = 3){
 
     return bytes.toPrecision(precision)+sizeUnits[i];
 }
+
+//Teniendo en cuenta negativos:
+function fromBytesToFormattedSizeUnits2(bytes, precision = 3){
+    if(isNaN(bytes) || isFinite(bytes)){
+        return 'Invalid input';
+    }
+
+    bytes = Math.abs(bytes);
+
+    const sizeUnits2 = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+    let j=0;
+    while(bytes >= 1024 && j < sizeUnits2.length - 1){
+        bytes /= 1024;
+        j++;
+    }
+
+    return (bytes * (bytes < 0 ? -1 : 1)).toPrecision(precision) + sizeUnits2[j];
+}
+
+/*DOCUMENTACIÓN:
+-Math.abs: me devuelve el valor absoluto del número 
+-isNaN: devuelve un true o un flase, si el valo res un número o no
+-isFinite: devuelve un true si es un número fiiito y false si no lo es o no es un número
+-toPrecision: formatea el número con la precisión indicada
+*/
